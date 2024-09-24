@@ -59,13 +59,14 @@ const BookingList = () => {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>Full Name</TableCell>
-              <TableCell>Email</TableCell>
-              <TableCell>Phone</TableCell>
-              <TableCell>Package Name</TableCell>
-              <TableCell>Package Price</TableCell>
-              <TableCell>Total Price</TableCell>
-              <TableCell>Date</TableCell>
+            <TableCell className="light-blue-column">Full Name</TableCell>
+              <TableCell className="light-blue-column">Email</TableCell>
+              <TableCell className="light-blue-column">Phone</TableCell>
+              <TableCell className="light-blue-column">Package Name</TableCell>
+              <TableCell className="light-blue-column">Package Price</TableCell>
+              <TableCell className="light-blue-column">Total Price</TableCell>
+              <TableCell className="light-blue-column">Date</TableCell>
+              <TableCell className="light-blue-column">Actions</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

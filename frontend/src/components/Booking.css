@@ -4,7 +4,11 @@
     display: flex;
     gap: 10px;
   }
-  
-  .search-box {
+ 
+.search-box {
     flex: 1;
+  }
+
+.light-blue-column {
+    background-color: #e0f7fa; /* Light blue color */
   }
