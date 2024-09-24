@@ -20,6 +20,7 @@ const BookingForm = () => {
     date: '',
     equipment: [],
   });
+  
 
   const bookingData = location.state?.data; // Get the existing booking data if available (for editing)
   const [totalEquipmentPrice, setTotalEquipmentPrice] = useState(0);
@@ -102,6 +103,7 @@ const BookingForm = () => {
       />
       <TextField
         label="Email"
+        type='email'
         variant="outlined"
         fullWidth
         margin="normal"
@@ -110,6 +112,7 @@ const BookingForm = () => {
       />
       <TextField
         label="Phone"
+        type='number'
         variant="outlined"
         fullWidth
         margin="normal"
