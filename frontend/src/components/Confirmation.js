@@ -54,6 +54,9 @@ const Confirmation = () => {
       <Typography variant="h6">Full Name: {bookingData.fullName}</Typography>
       <Typography variant="h6">Email: {bookingData.email}</Typography>
       <Typography variant="h6">Phone: {bookingData.phone}</Typography>
+      <Typography variant="h6">Address: {bookingData.address}</Typography>
+      <Typography variant="h6">Date: {new Date(bookingData.date).toLocaleDateString()}</Typography>
+      <Typography variant="h6">Equipment: {bookingData.equipment.map(eq => eq.name).join(', ')}</Typography>
       <Typography variant="h6">Package: {bookingData.packageName}</Typography>
       <Typography variant="h6">Total Price: ${bookingData.totalPrice}</Typography>
 

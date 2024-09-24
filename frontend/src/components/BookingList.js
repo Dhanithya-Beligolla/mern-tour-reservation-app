@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Typography, Table, TableHead, TableRow, TableCell, TableBody, TableContainer, Paper, TextField } from '@mui/material';
+import { Typography, Table, TableHead, TableRow, TableCell, TableBody, TableContainer, Paper, TextField,  Button } from '@mui/material';
 import './Booking.css';
 
 const BookingList = () => {
@@ -18,6 +18,16 @@ const BookingList = () => {
         console.error('Error fetching bookings:', error);
       });
   }, []);
+
+  const handleDelete = (id) => {
+    axios.delete(`http://localhost:5934/api/bookings/${id}`)
+      .then(() => {
+        setBookings(bookings.filter(booking => booking._id !== id));
+      })
+      .catch(error => {
+        console.error('Error deleting booking:', error);
+      });
+  };
 
   // Filter bookings based on search inputs
   const filteredBookings = bookings.filter(booking => 
@@ -67,7 +77,15 @@ const BookingList = () => {
                 <TableCell>{booking.packageName}</TableCell>
                 <TableCell>{booking.packagePrice}</TableCell>
                 <TableCell>{booking.totalPrice}</TableCell>
-                <TableCell>{booking.date}</TableCell>
+                <TableCell>{new Date(booking.date).toISOString().split('T')[0]}</TableCell>
+                <Button
+                    variant="contained"
+                    color="secondary"
+                    onClick={() => handleDelete(booking._id)}
+                    style={{ backgroundColor: 'red' }}
+                  >
+                    Delete
+                  </Button>
               </TableRow>
             ))}
           </TableBody>
